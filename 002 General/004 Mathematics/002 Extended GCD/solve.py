@@ -1,37 +1,23 @@
-def gcd (a,b):
+a = 32321
+b = 26513
 
-    #Check which is greater
-    gcd = None
+rem1 = a
+rem2 = b
 
-    if a > b:
-        gcd = a
-    else:
-        gcd = b
+x1 = 1
+x2 = 0
+
+y1 = 0
+y2 = 1
+
+while rem2 > 0:
+    quot,rem = divmod(rem1,rem2)  
+    rem1 = rem2
+    rem2 = rem
     
+    # Beizout identity
+    x1,x2 = x2,x1 - quot * x2
+    y1,y2 = y2,y1 - quot * y2
 
-    while (gcd != 0):
-
-        if (a / gcd % 1 == 0 and b / gcd % 1 == 0):
-            return gcd
-        
-        gcd = gcd - 1
-
-
-def ex_gcd (p,q):
-
-    max_multiple = 100
-
-    for u in range(0, max_multiple):
-        for v in range(0, max_multiple):
-            mul1 = p * u
-            mul2 = q * v
-
-            if (gcd(mul1, mul2) != 1):
-
-                if (u > v):
-                    return v
-                else:
-                    return u
-
-
-print(ex_gcd(26513, 32321))
+print("u: " + str(x1))
+print("v: " + str(y1))

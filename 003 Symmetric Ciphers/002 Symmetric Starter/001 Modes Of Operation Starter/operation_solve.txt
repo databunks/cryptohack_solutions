@@ -1,0 +1,4 @@
+curl https://aes.cryptohack.org/block_cipher_starter/encrypt_flag/
+curl https://aes.cryptohack.org/block_cipher_starter/decrypt/0bf3da3fce245ce6bd6c9a9abaaef49945bbf20ec314ca38b341707c36bd00b9
+
+hex -> plaintext -> encrypt_flag
